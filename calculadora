@@ -1,0 +1,83 @@
+import java.util.Scanner;
+
+
+public class teste{
+
+    public static void main(String[] args) {
+
+        double a = 0, b = 0;
+        int op;
+        boolean sair = false;
+        Scanner obj = new Scanner(System.in);
+        Scanner valor = new Scanner(System.in);
+       
+        do{
+
+        System.out.println("\n\nBem vindo à calculadora");
+        System.out.println("Escolha uma opção: ");
+        System.out.println("1-Soma                2-Subtração");
+        System.out.println("3-Multiplicação       4-Divisão");
+        System.out.println("5-Raiz Quadrada       6-Potenciação Quadrática\n");
+
+
+       
+        System.out.println("Digite a opção desejada:  ");
+        op = valor.nextInt();
+
+        if ((op > 0) && (op < 5)) {
+            System.out.printf("Digite o 1° Número: ");
+            a = valor.nextDouble();
+            System.out.printf("Digite o 2° Número: ");
+            b = valor.nextDouble();
+        }else if((op == 5) || (op == 6)){
+            System.out.printf("Digite um número: ");
+            a = valor.nextDouble();
+        }else{
+        }
+
+        
+        switch (op) {
+            case 1:
+                System.out.printf("A Soma é: " + (a + b));
+                break;
+            case 2:
+                System.out.printf("A Subtração é: " + (a - b));
+                break;
+            case 3:
+                System.out.printf("A Multiplicação é: " + (a * b));
+                break;
+            case 4:
+                if (b == 0) {
+                    System.out.printf("Não é possível dividir por 0");
+                } else {
+                    System.out.printf("A Divisão é: " + (a / b));
+                }
+                break;
+            case 5:
+               
+                System.out.printf("Sua Raiz Quadrada é: %.2f\n", (Math.sqrt(a)));
+                break;
+            case 6:
+                System.out.printf("Seu Quadrado é: " + (Math.pow(a, 2)));
+                break;
+            default:
+                System.out.println("Opção Inexistente!");
+        }
+
+        System.out.printf(" \nDeseja continuar? Digite 1 para sair, 0 para continuar.");
+        int out = obj.nextInt();
+        if(out == 0){
+            sair = false;
+        }else{
+            if(out == 1){
+                sair = true;
+            }
+        }
+       
+       
+        }while(sair != true);
+        System.out.print("encerrado!!");
+        
+    }
+}
+
